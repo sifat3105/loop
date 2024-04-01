@@ -12,7 +12,7 @@ for i in alist:
     for j in x[:2]:
         if j == i[-1]:
             y.append(i)
-for i in y:
+for i in y: 
     out.append(i[0])
 print(*out)
 
