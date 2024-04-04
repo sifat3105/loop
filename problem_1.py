@@ -1,26 +1,24 @@
 tasks = [(3, 100), (1, 300), (2, 200)]
 
-penaltes = []
-for i in  tasks:
-    penaltes.append(i[-1])
+penalties = []
+for task in tasks:
+    penalties.append(task[-1])
 
-penaltes.sort()
+penalties.sort()
 
 schedule = []
 total_penalty = 0
-days= 0
+days = 0
 
-for j in penaltes:
-    for i in tasks:
-        if i[-1] == j:
-            deadline = i[0]
-            if days > deadline:
-                schedule.append(i)
-                days+=1
+for penalty in penalties:
+    for task in tasks:
+        if task[-1] == penalty:
+            deadline = task[0]
+            if days < deadline:
+                schedule.append(task)
+                days = deadline  # Update the days to the task deadline
             else:
-                total_penalty+= j
-            
+                total_penalty += penalty
+
 print("Optimal order of tasks:", schedule)
 print("Total penalty incurred:", total_penalty)
-# tasks.sort(key=lambda x: x[0] )
-# print(tasks)
