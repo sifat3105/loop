@@ -1,7 +1,7 @@
-x = 121
+x = input("enter number")
 
-x = str(x)
-reversed_x = x[::-1]
-palindrome = x == reversed_x
+y = str(x)
+reversed_y = y[::-1]
+palindrome = x == reversed_y
 
 print(palindrome)
